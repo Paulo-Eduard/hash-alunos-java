@@ -123,6 +123,21 @@ public class TabelaHash {
         return resultado;
     }
 
+    /** Alunos de uma posição, na ordem da lista (usado pela interface web). */
+    public Aluno[] alunosNaPosicao(int indice) {
+        if (indice < 0 || indice >= TAMANHO) {
+            throw new IllegalArgumentException("Índice fora do intervalo 0-" + (TAMANHO - 1));
+        }
+        int n = 0;
+        for (No p = tabela[indice]; p != null; p = p.getProximo()) n++;
+        Aluno[] resultado = new Aluno[n];
+        int i = 0;
+        for (No p = tabela[indice]; p != null; p = p.getProximo()) {
+            resultado[i++] = p.getAluno();
+        }
+        return resultado;
+    }
+
     /** Monta a visualização das 11 posições, destacando colisões. */
     public String exibir() {
         StringBuilder sb = new StringBuilder();

@@ -1,7 +1,6 @@
-package infralab;
+package infralab.view;
 
 import infralab.structures.TabelaHash;
-import infralab.view.Menu;
 
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;

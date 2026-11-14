@@ -38,10 +38,12 @@ Java 17+ (testado com Java 21), orientação a objetos, console. Nenhuma bibliot
 ```
 src/
 ├── main/java/infralab/
-│   ├── Main.java                  # inicialização
 │   ├── model/Aluno.java           # matrícula, nome, idade
 │   ├── structures/No.java         # nó da lista encadeada
 │   ├── structures/TabelaHash.java # tabela hash e operações
+│   ├── api/Servidor.java          # servidor HTTP da versão web
+│   ├── view/Main.java             # inicialização (console)
+│   ├── view/MainWeb.java          # inicialização (versão web)
 │   └── view/Menu.java             # interação com o usuário
 └── test/java/infralab/
     └── TabelaHashTest.java        # testes (sem JUnit)
@@ -54,7 +56,7 @@ Na raiz do projeto:
 ```
 mkdir -p out
 javac -encoding UTF-8 -d out $(find src/main -name "*.java")
-java -cp out infralab.Main
+java -cp out infralab.view.Main
 ```
 
 **Windows (PowerShell)**
@@ -62,7 +64,7 @@ java -cp out infralab.Main
 mkdir out
 javac -encoding UTF-8 -d out (Get-ChildItem -Recurse src\main -Filter *.java).FullName
 chcp 65001
-java -cp out infralab.Main
+java -cp out infralab.view.Main
 ```
 
 **Testes**
@@ -71,7 +73,7 @@ javac -encoding UTF-8 -d out $(find src -name "*.java")
 java -cp out infralab.TabelaHashTest
 ```
 
-No Eclipse/VS Code: importe como projeto Java com `src/main/java` e `src/test/java` como pastas de código-fonte e execute `infralab.Main`.
+No Eclipse/VS Code: importe como projeto Java com `src/main/java` e `src/test/java` como pastas de código-fonte e execute `infralab.view.Main`.
 
 ## Exemplo de utilização
 Inserir 1001/João/20, 1012/Maria/22 e 1023/Pedro/19, depois escolher a opção 4:
@@ -83,3 +85,26 @@ Inserir 1001/João/20, 1012/Maria/22 e 1023/Pedro/19, depois escolher a opção 
 
 ## Casos de teste (49 verificações em `TabelaHashTest`)
 1. Cadastro de um aluno · 2. Vários alunos · 3. Inserção com colisão · 4. Inserção no final · 5. Matrícula duplicada (cabeça e último nó) · 6. Busca existente · 7. Busca inexistente · 8. Remoção do primeiro nó · 9. Remoção intermediária · 10. Remoção do último nó (e do único nó) · 11. Remoção inexistente · 12. Exibição das 11 posições · 13. Entradas inválidas (texto, vazio, negativo, zero, overflow, idade fora de 1–120) · 14. Fluxo completo pelo Menu.
+
+## Versão web (frontend HTML/CSS/JS)
+Além do console, o projeto tem uma interface web em `tabela-hash-alunos/web/` (`index.html`, `style.css`, `app.js`), servida por um servidor HTTP feito só com o JDK (`infralab/api/Servidor.java`). O console continua funcionando como antes.
+
+Na raiz de `tabela-hash-alunos/` (a pasta `web/` precisa estar no diretório de execução):
+```
+mkdir -p out
+javac -encoding UTF-8 -d out $(find src/main -name "*.java")
+java -cp out infralab.view.MainWeb
+```
+Depois abra http://localhost:8080. No IntelliJ, execute `infralab.view.MainWeb` com o *Working directory* apontando para `tabela-hash-alunos`.
+
+API: `GET /api/tabela` · `POST /api/alunos` (matricula, nome, idade) · `GET /api/alunos/{matricula}` · `DELETE /api/alunos/{matricula}`.
+
+O menu da versão web tem as mesmas cinco opções do console: Inserir novo aluno, Buscar aluno, Remover aluno, Exibir tabela hash e Encerrar sistema (`POST /api/encerrar`, que desliga o servidor).
+
+## Equipe
+<!-- Obrigatório na entrega: preencha com os nomes dos 5 a 7 integrantes. -->
+- Nome do integrante 1
+- Nome do integrante 2
+- Nome do integrante 3
+- Nome do integrante 4
+- Nome do integrante 5

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabela Hash de Alunos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tabela Hash de Alunos</h1>
+    <p>A matrícula é a chave e a função hash é h(chave) = chave % 11. Matrículas que caem no mesmo índice formam uma lista encadeada.</p>
+  </header>
+  <main>
+    <nav class="menu" aria-label="Menu principal">
+      <button type="button" data-tela="inserir" class="ativo">Inserir novo aluno</button>
+      <button type="button" data-tela="buscar">Buscar aluno</button>
+      <button type="button" data-tela="remover">Remover aluno</button>
+      <button type="button" data-tela="exibir">Exibir tabela hash</button>
+      <button type="button" data-tela="encerrar" class="perigo">Encerrar sistema</button>
+    </nav>
+    <section class="painel">
+      <form id="tela-inserir" class="tela">
+        <h2>Inserir novo aluno</h2>
+        <label>Matrícula <input id="matricula" type="number" min="1" required></label>
+        <label>Nome <input id="nome" type="text" autocomplete="off" required></label>
+        <label>Idade <input id="idade" type="number" min="1" max="120" required></label>
+        <button type="submit">Inserir aluno</button>
+      </form>
+      <form id="tela-buscar" class="tela" hidden>
+        <h2>Buscar aluno</h2>
+        <label>Matrícula <input id="busca" type="number" min="1" required></label>
+        <button type="submit">Buscar aluno</button>
+      </form>
+      <form id="tela-remover" class="tela" hidden>
+        <h2>Remover aluno</h2>
+        <label>Matrícula <input id="remocao" type="number" min="1" required></label>
+        <button type="submit" class="perigo">Remover aluno</button>
+      </form>
+      <div id="tela-exibir" class="tela" hidden>
+        <h2>Tabela hash <span id="total"></span></h2>
+        <ol id="posicoes"></ol>
+      </div>
+      <div id="tela-encerrar" class="tela" hidden>
+        <h2>Encerrar sistema</h2>
+        <p>O servidor será desligado e os alunos cadastrados serão perdidos.</p>
+        <button id="btn-encerrar" type="button" class="perigo">Encerrar sistema</button>
+      </div>
+      <div id="msg" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
