@@ -14,7 +14,7 @@ public class TabelaHash {
 
     public static final int TAMANHO = 11;
 
-    /** Resultado possível de uma inserção. */
+    //Resultado possível de uma inserção.
     public enum ResultadoInsercao {
         INSERIDO,               // posição estava vazia
         INSERIDO_COM_COLISAO,   // posição ocupada; aluno entrou no final da lista
@@ -25,7 +25,7 @@ public class TabelaHash {
     private final No[] tabela = new No[TAMANHO];
     private int quantidade = 0;
 
-    /** Função Hash: resto da divisão da matrícula por 11. */
+    //Função Hash: resto da divisão da matrícula por 11.
     public int hash(int chave) {
         if (chave < 0) {
             throw new IllegalArgumentException("A matrícula não pode ser negativa.");
@@ -67,7 +67,7 @@ public class TabelaHash {
         return ResultadoInsercao.INSERIDO_COM_COLISAO;
     }
 
-    /** Busca acessando somente a lista do índice calculado. Retorna null se não existir. */
+    //Busca acessando somente a lista do índice calculado. Retorna null se não existir.
     public Aluno buscar(int matricula) {
         No atual = tabela[hash(matricula)];
         while (atual != null) {
@@ -108,7 +108,7 @@ public class TabelaHash {
 
     public int getQuantidade() { return quantidade; }
 
-    /** Matrículas de uma posição, na ordem da lista (útil para testes). */
+    //Matrículas de uma posição, na ordem da lista (útil para testes).
     public int[] matriculasNaPosicao(int indice) {
         if (indice < 0 || indice >= TAMANHO) {
             throw new IllegalArgumentException("Índice fora do intervalo 0-" + (TAMANHO - 1));
@@ -123,7 +123,7 @@ public class TabelaHash {
         return resultado;
     }
 
-    /** Alunos de uma posição, na ordem da lista (usado pela interface web). */
+    // Alunos de uma posição, na ordem da lista (usado pela interface web)
     public Aluno[] alunosNaPosicao(int indice) {
         if (indice < 0 || indice >= TAMANHO) {
             throw new IllegalArgumentException("Índice fora do intervalo 0-" + (TAMANHO - 1));
@@ -138,7 +138,7 @@ public class TabelaHash {
         return resultado;
     }
 
-    /** Monta a visualização das 11 posições, destacando colisões. */
+    //Monta a visualização das 11 posições, destacando colisões
     public String exibir() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < TAMANHO; i++) {
