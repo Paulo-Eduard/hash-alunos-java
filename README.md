@@ -37,16 +37,26 @@ Java 17+ (testado com Java 21), orientação a objetos, console. Nenhuma bibliot
 ## Estrutura de pastas
 ```
 src/
-├── main/java/infralab/
-│   ├── model/Aluno.java           # matrícula, nome, idade
-│   ├── structures/No.java         # nó da lista encadeada
-│   ├── structures/TabelaHash.java # tabela hash e operações
-│   ├── api/Servidor.java          # servidor HTTP da versão web
-│   ├── view/Main.java             # inicialização (console)
-│   ├── view/MainWeb.java          # inicialização (versão web)
-│   └── view/Menu.java             # interação com o usuário
-└── test/java/infralab/
-    └── TabelaHashTest.java        # testes (sem JUnit)
+├── main/
+│   └── java/infralab/
+│       ├── model/
+│       │   └── Aluno.java            # matrícula, nome, idade
+│       ├── structures/
+│       │   ├── No.java               # nó da lista encadeada
+│       │   └── TabelaHash.java       # tabela hash e operações
+│       ├── api/
+│       │   └── Servidor.java         # servidor HTTP da versão web
+│       └── view/
+│           ├── Main.java             # inicialização (console)
+│           ├── MainWeb.java          # inicialização (versão web)
+│           └── Menu.java             # interação com o usuário
+├── test/
+│   └── java/infralab/
+│       └── TabelaHashTest.java       # testes (sem JUnit)
+└── web/
+    ├── index.html                    # página principal
+    ├── style.css                     # estilos
+    └── app.js                        # lógica do front-end (consome a API)
 ```
 
 ## Como executar
