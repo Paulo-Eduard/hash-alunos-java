@@ -1,7 +1,7 @@
 # Sistema de Gerenciamento de Alunos com Tabela Hash
 
 ## Objetivo
-Sistema acadêmico de console para cadastrar, buscar, remover e visualizar alunos, usando uma **Tabela Hash com Encadeamento (Separate Chaining)** implementada manualmente (sem `HashMap`, `Hashtable`, `HashSet` ou `LinkedList`). Trabalho da disciplina de Construção de Compiladores.
+Sistema acadêmico de console para cadastrar, buscar, remover e visualizar alunos, usando uma **Tabela Hash com Encadeamento (Separate Chaining)** implementada manualmente (sem `HashMap`, `Hashtable`, `HashSet` ou `LinkedList`). Trabalho da disciplina de Estrutura de Dados II.
 
 ## A Tabela Hash
 Uma Tabela Hash é um vetor em que a posição de cada registro é calculada a partir da sua **chave**, o que permite acessar o registro sem percorrer a estrutura inteira. Aqui:
@@ -103,8 +103,8 @@ O menu da versão web tem as mesmas cinco opções do console: Inserir novo alun
 
 ## Equipe
 <!-- Obrigatório na entrega: preencha com os nomes dos 5 a 7 integrantes. -->
-- Nome do integrante 1
-- Nome do integrante 2
-- Nome do integrante 3
-- Nome do integrante 4
-- Nome do integrante 5
+- Paulo Eduardo
+- Yahonan Alcântara
+- Rafael Lucas
+- Ysaac William
+- Luiz Henrique
