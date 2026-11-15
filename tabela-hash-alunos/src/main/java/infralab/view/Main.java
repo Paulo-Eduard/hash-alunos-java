@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-/** Ponto de entrada: cria a tabela e inicia o menu. */
+//Ponto de entrada: cria a tabela e inicia o menu.
 public class Main {
     public static void main(String[] args) {
         PrintStream saida = new PrintStream(System.out, true, StandardCharsets.UTF_8);
