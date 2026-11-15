@@ -7,7 +7,7 @@ import infralab.structures.TabelaHash.ResultadoInsercao;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-/** Interface de console. Toda leitura é feita como texto e convertida com validação. */
+//Interface de console. Toda leitura é feita como texto e convertida com validação
 public class Menu {
 
     private final Scanner entrada;
@@ -120,13 +120,13 @@ public class Menu {
         }
     }
 
-    // ---------- leitura com validação ----------
+    // leitura com validação 
 
     private String lerLinha() {
         return entrada.hasNextLine() ? entrada.nextLine() : null;
     }
 
-    /** Lê um inteiro no intervalo [min, max]. Retorna null se a entrada for inválida ou acabar. */
+    //Lê um inteiro no intervalo [min, max], retorna null se a entrada for inválida ou acabar
     private Integer lerInteiro(String rotulo, int min, int max) {
         saida.print(rotulo);
         String linha = lerLinha();
